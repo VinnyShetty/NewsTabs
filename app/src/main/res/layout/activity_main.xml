@@ -17,17 +17,16 @@
             android:id="@+id/tabLayout"
             android:background="#35C4A9"
             app:tabSelectedTextColor="#000000"
-            app:tabTextColor="#FFFFFf"
+            app:tabTextColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             app:tabMode="scrollable" />
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

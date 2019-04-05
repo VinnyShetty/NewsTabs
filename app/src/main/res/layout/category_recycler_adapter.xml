@@ -3,12 +3,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 <TextView
-    android:layout_width="80dp"
-    android:layout_height="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
     android:background="@drawable/oval"
     android:layout_gravity="center"
     android:gravity="center"
+    android:padding="5dp"
     android:id="@+id/Category"
     android:text="category"/>
 </LinearLayout>

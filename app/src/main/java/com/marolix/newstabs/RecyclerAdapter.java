@@ -9,16 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.Map;
+
 public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewHolderClass> {
     Context context;
-    String[] arr;
-    String[] arr1;
-    int[] images;
-    public RecyclerAdapter(Context context, String[] arr, String[] arr1, int[] images) {
+    ArrayList<Map<String,String>> al;
+    public RecyclerAdapter(Context context, ArrayList<Map<String,String>> al) {
         this.context= context;
-        this.arr=arr;
-        this.arr1=arr1;
-        this.images=images;
+        this.al=al;
     }
 
     @NonNull
@@ -31,14 +32,16 @@ public class RecyclerAdapter  extends RecyclerView.Adapter<RecyclerAdapter.ViewH
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderClass viewHolderClass, int i) {
-        viewHolderClass.textView.setText( arr[i] );
-        viewHolderClass.textView1.setText( arr1[i] );
-        viewHolderClass.imageView.setImageResource( images[i] );
+        viewHolderClass.textView.setText( al.get(i).get("heading") );
+        viewHolderClass.textView1.setText( al.get(i).get("publishdate"));
+        Picasso.with(context)
+                .load(al.get(i).get("urltoimage"))
+                .into(viewHolderClass.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return arr.length;
+        return al.size();
     }
 
     public class ViewHolderClass extends RecyclerView.ViewHolder {
