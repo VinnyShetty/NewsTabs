@@ -105,4 +105,6 @@ public class ShortNews extends Fragment {
 
         return view;
     }
+
+
 }
